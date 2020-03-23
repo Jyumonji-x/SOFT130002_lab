@@ -1,0 +1,58 @@
+body{
+    font-size: 15px;
+    color: black;
+    background-color: aliceblue;
+    margin: 0;
+    line-height: 30px;
+}
+nav{
+    background-color: white;
+    box-shadow: 3px 3px 3px gray;
+    height:70px
+}
+nav div{
+    float: right;
+    text-align: center;
+    padding:  20px 30px 20px 30px;
+    border:0;
+    font-size: 20px;
+}
+nav a{
+    color: dimgray;
+}
+nav a:hover{
+    color:black;
+    transition-duration: 300ms;
+}
+section h1{
+    font-weight: bold;
+    font-size: 25px;
+    margin:20px;
+}
+section{
+    margin:30px 20%;
+    background-color: white;
+    padding:40px;
+    box-shadow: 3px 3px 3px gray;
+}
+section p{
+    margin:30px;
+}
+input[type="checkbox"], input[type="radio"] {
+    width: 2em;
+}
+
+input[type="button"],input[type="submit"]  {
+    background-color: #ffffff;
+    border: #171a21 solid 1px;
+    width: 4em;
+}
+
+input[type="button"],input[type="submit"],input[type="checkbox"], input[type="radio"], select:hover {
+    cursor: pointer;
+}
+
+textarea {
+    height: 15em;
+    width: 70%;
+}

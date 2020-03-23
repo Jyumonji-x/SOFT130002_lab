@@ -1,0 +1,66 @@
+body{
+    font-size: 20px;
+    color: black;
+    background-color: aliceblue;
+    margin: 0;
+}
+nav{
+    background-color: white;
+    box-shadow: 3px 3px 3px gray;
+    height:70px;
+}
+nav div{
+    display: inline-block;
+    text-align: center;
+    padding:  20px 30px 20px 30px;
+    border:0;
+    font-size: 20px;
+}
+nav a{
+    color: dimgray;
+}
+nav a:hover{
+    color:black;
+    transition-duration: 300ms;
+}
+aside{
+    float:left;
+    margin: 1% 10% 1% 1%;
+    background-color: white;
+    box-shadow: 3px 3px 3px gray;
+    width: 20%;
+}
+aside a:hover{
+    color:black;
+    transition-duration: 300ms;
+}
+aside li{
+    margin: 50px;
+}
+section{
+    background-color: white;
+    box-shadow: 3px 3px 3px gray;
+    float: left;
+    margin: 1% 1% 1% 10%;
+    width:48%;
+    padding: 15px;
+}
+section article{
+    margin: 15px;
+}
+section article h1{
+    font-weight: bold;
+    margin: 20px;
+}
+section article p{
+    font-size: 15px;
+    overflow: hidden;
+    line-height: 20px;
+    margin:0px 30px;
+}
+section article p small{
+    font-size: 12px;
+}
+section span{
+    color:dodgerblue;
+}
