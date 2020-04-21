@@ -16,3 +16,9 @@
 涉及知识点：js中的key和value
 
 解决方案：1、通过一个数组count来计每个字符出现的次数；2、查找count中最大的value。
+## 4、截图
+
+![page](./images/webPage.jpg)
+
+
+![gitpage](./images/gitPage.jpg)
