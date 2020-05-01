@@ -25,6 +25,8 @@ function testTime(){
         }
     }();
 }
+
+console.log("第1个:testTime();");
 testTime();//测试
 
 /*
@@ -53,6 +55,7 @@ function testMail(telephone,mail) {
         console.log("Both the telephone and the mail are wrong!");
     }
 }
+console.log("第2个(testMail('18001851517','19302010015@fudan.edu.cn');):");
 testMail('18001851517','19302010015@fudan.edu.cn');
 
 /*
@@ -84,7 +87,8 @@ function testRedundancy(str) {
     }
     return result;
 }
-console.log(testRedundancy("aa aa aa b b b going up up"));
+console.log("第3个(console.log(testRedundancy('aa aa aa b b b going up up'));):");
+console.log(testRedundancy('aa aa aa b b b going up up'));
 
 /*
 4.
@@ -119,6 +123,7 @@ function testKeyBoard(wantInput, actualInput) {
     }
     return result;
 }
+console.log("第4个(testKeyBoard(\"7_This_is_a_test\",\"_hs_s_a_es\")):");
 console.log(testKeyBoard("7_This_is_a_test","_hs_s_a_es"));
 /*
 5.
@@ -142,6 +147,7 @@ function testSpecialReverse(str) {
     }
     return reverse.join(" ");//用空格符分割开并输出
 }
+console.log("第5个(testSpecialReverse(\"  the   sky    is     blue   \")):");
 console.log(testSpecialReverse("  the   sky    is     blue   "));
 /*
 6.
@@ -172,6 +178,7 @@ function twoSum(nums, target) {
     }
     return result;
 }
+console.log("第6个(twoSum([5,6,7,4,3,2,1],7)):");
 console.log(twoSum([5,6,7,4,3,2,1],7));
 
 /*
@@ -189,20 +196,23 @@ function lengthOfLongestSubstring(str) {
     let strMap = new Map;
     let result = 0;
     let a = 0;
-    for(let i =1;i<=str.length;i++){
-        if(strMap.get(str[i-1])){
+    for(let i =0;i<str.length;i++){
+        if(strMap.get(str[i])){
             result = Math.max(result,a);
-            a = 0;
+            a = 1;
             strMap = new Map;
+            strMap.set(str[i],true);
         }
         else {
-            strMap.set(str[i-1],true);//这里的value没有具体含义
+            strMap.set(str[i],true);
             a++;
         }
     }
+    result = Math.max(result,a);
     return result;
 }
-lengthOfLongestSubstring("abbbccdfe");
+console.log("第7个(lengthOfLongestSubstring(\"abbbce\")):");
+console.log(lengthOfLongestSubstring("abbbce"));
 /*
 8.
 背景：
@@ -234,7 +244,7 @@ function DevelopedCountry(){
 }
 DevelopedCountry.prototype = Object.create(Country);
 
-
+console.log("第8个:继承类");
 let developingCountry = new DevelopingCountry();
 developingCountry.sayHi();
 let poorCountry = new PoorCountry();
