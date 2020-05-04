@@ -28,7 +28,6 @@ function testTime(){
 
 console.log("第1个:testTime();");
 testTime();//测试
-
 /*
 2.
 要求：
@@ -168,18 +167,27 @@ function twoSum(nums, target) {
     let numsMap = new Map();
     let result =[];
     for (let i = 1; i <= nums.length; i++) {//从i=1开始，是因为i=0时似乎无法在get时查找到
-        numsMap.set(nums[i-1],i);//数字存入numsMap
-        if (numsMap.get(target-nums[i-1])) {//判断是否有符合条件的数值对
-            let res = [];
-            res.push(i-1);
-            res.push(numsMap.get(target-nums[i-1])-1);
-            result.push(res);
+        if(numsMap.has(nums[i-1])){
+            numsMap.get(nums[i-1]).push(i);
+        }
+        else{
+            numsMap.set(nums[i-1],[i]);//数字存入numsMap
+        }
+        if (numsMap.has(target-nums[i-1])) {//判断是否有符合条件的数值对
+
+            for(let j=0;j<numsMap.get(target-nums[i-1]).length;j++){
+                let res = [];
+                res.push(i-1);
+                res.push(numsMap.get(target-nums[i-1])[j]-1);
+                result.push(res);
+            }
+
         }
     }
     return result;
 }
-console.log("第6个(twoSum([5,6,7,4,3,2,1],7)):");
-console.log(twoSum([5,6,7,4,3,2,1],7));
+console.log("第6个(twoSum([1,1,3,3,2,2,4,4],5)):");
+console.log(twoSum([1,1,3,3,2,2,4,4],5));
 
 /*
 7.
