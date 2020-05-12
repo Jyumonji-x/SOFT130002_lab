@@ -20,9 +20,8 @@ for(let i =0;i<works.length;i++){
     author.style.display="inline";
     author.innerHTML = works[i].author;
 
-    let lifetime = document.createElement("div");
+    let lifetime = document.createElement("h5");
     lifetime.style.display="inline";
-    lifetime.style.fontWeight="bold";
     lifetime.innerHTML = "&nbsp;&nbsp;lifetime:"+ works[i].lifetime;
     authorInnerBox.append(author,lifetime);
 
