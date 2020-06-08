@@ -52,25 +52,28 @@ function getLoginForm(){
             require_once("config.php");
             $loggedIn=false;
             session_start();
-            if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                if(validLogin()){
-                    // add 1 day to the current time for expiry time
-                    $expiryTime = time()+60*60*24;
-                    //setcookie("Username", $_POST['username'], $expiryTime);
-                    $_SESSION['Username']=$_POST['username'];
 
-                }
-                else{
-                    echo "login unsuccessful";
-                }
-            }
 //            if(isset($_COOKIE['Username'])){
             if(isset($_SESSION['Username'])){
 //                echo "Welcome ".$_COOKIE['Username'];
                 echo "Welcome ".$_SESSION["Username"];
             }
             else{
-                echo "No Post detected";
+                if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                    if(validLogin()){
+                        // add 1 day to the current time for expiry time
+                        $expiryTime = time()+60*60*24;
+                        //setcookie("Username", $_POST['username'], $expiryTime);
+                        $_SESSION['Username']=$_POST['username'];
+
+                    }
+                    else{
+                        echo "login unsuccessful";
+                    }
+                }
+                else{
+                    echo "No Post detected";
+                }
             }
             ?>
 
